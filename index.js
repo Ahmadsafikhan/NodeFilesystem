@@ -64,6 +64,6 @@ function saveUsersToFile(users) {
   fs.writeFileSync("users.json", JSON.stringify(users, null, 2));
 }
 
-app.listen(4000, () => {
-  console.log("Server running on 4000");
+app.listen(4001, () => {
+  console.log("Server running on 4001");
 });
