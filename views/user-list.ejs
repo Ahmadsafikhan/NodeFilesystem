@@ -69,6 +69,10 @@
         button:hover {
             background-color: #c82333;
         }
+        .update-button {
+            margin-left: 10px;
+            background-color: #23c85a;
+        }
     </style>
 </head>
 <body>
@@ -89,6 +93,10 @@
                     <td><%= user.age %> years old</td>
                     <td><%= user.id %></td>
                     <td>
+                        <!-- Added an "Update" button for each user -->
+                        <form action="/users/<%= user.id %>/update" method="get">
+                            <button class="update-button" type="submit">Update</button>
+                        </form>
                         <form action="/users/<%= user.id %>?_method=DELETE" method="post">
                             <button type="submit">Delete</button>
                         </form>

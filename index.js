@@ -42,7 +42,6 @@ app.get("/users/:id/update", (req, res) => {
 
   res.render("update-user", { user });
 });
-
 // Route to handle user creation
 app.post("/users", createUser);
 
