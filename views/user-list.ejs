@@ -18,11 +18,11 @@
         }
 
         table {
-            border-collapse: collapse;
+            border-collapse: collapse; /* Collapse borders between cells */
             width: 80%;
             max-width: 600px;
             margin: 20px;
-            border: 1px solid #ccc;
+            border: 2px solid #ccc; /* Add border to create an outline */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -30,10 +30,13 @@
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ccc;
+            border-right: 1px solid #ccc; /* Add vertical border */
+            
         }
 
         th {
             background-color: #f2f2f2;
+            text-align: center;
         }
 
         a {
@@ -70,8 +73,20 @@
             background-color: #c82333;
         }
         .update-button {
-            margin-left: 10px;
+           margin-top: 0px;
             background-color: #23c85a;
+            color: #fff;
+            cursor: pointer; /* Add cursor pointer for better indication */
+        }
+        /* Adjust the button size to match the "Delete" button */
+        .update-button,
+        button {
+            font-size: 14px;
+        }
+        .button-align{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
     </style>
 </head>
@@ -83,7 +98,7 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>ID</th>
-                <th>Delete</th>
+                <th>Action</th> <!-- Changed column header to "Action" -->
             </tr>
         </thead>
         <tbody>
@@ -92,11 +107,9 @@
                     <td><%= user.name %></td>
                     <td><%= user.age %> years old</td>
                     <td><%= user.id %></td>
-                    <td>
-                        <!-- Added an "Update" button for each user -->
-                        <form action="/users/<%= user.id %>/update" method="get">
-                            <button class="update-button" type="submit">Update</button>
-                        </form>
+                    <td class="button-align">
+                        <!-- Changed the "Update" button to a hyperlink -->
+                        <a class="update-button" href="/users/<%= user.id %>/update">Update</a>
                         <form action="/users/<%= user.id %>?_method=DELETE" method="post">
                             <button type="submit">Delete</button>
                         </form>
