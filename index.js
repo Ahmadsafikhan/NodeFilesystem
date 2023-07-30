@@ -13,6 +13,7 @@ app.use(methodOverride("_method"));
 const { createUser } = require("./controllers/addUsers");
 const { updateUsers } = require("./controllers/updateUsers");
 const { showUsers } = require("./controllers/showUsers");
+const { deleteUser } = require("./controllers/deleteUsers");
 
 // Function to read users from file
 function getUsersFromFile() {
@@ -50,6 +51,8 @@ app.put("/users/:id", updateUsers);
 
 // Route to get all users
 app.get("/users", showUsers);
+
+app.delete("/users/:id", deleteUser);
 
 app.listen(4001, () => {
   console.log("Server running on 4001");

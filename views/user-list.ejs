@@ -10,6 +10,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
 
         h1 {
@@ -26,7 +27,7 @@
         }
 
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ccc;
         }
@@ -38,15 +39,35 @@
         a {
             display: inline-block;
             margin-top: 10px;
-            padding: 5px 10px;
+            padding: 8px 16px;
             text-decoration: none;
             background-color: #007BFF;
             color: #fff;
             border-radius: 5px;
+            transition: background-color 0.2s ease;
         }
 
         a:hover {
             background-color: #0056b3;
+        }
+
+        form {
+            display: inline-block;
+            margin: 0;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #c82333;
         }
     </style>
 </head>
@@ -58,6 +79,7 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>ID</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -66,6 +88,11 @@
                     <td><%= user.name %></td>
                     <td><%= user.age %> years old</td>
                     <td><%= user.id %></td>
+                    <td>
+                        <form action="/users/<%= user.id %>?_method=DELETE" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             <% }); %>
         </tbody>

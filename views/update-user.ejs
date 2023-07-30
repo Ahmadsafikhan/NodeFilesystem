@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Update User</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
 
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            margin-bottom: 10px;
-        }
-
-        input {
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-        }
-        .form{
+      .form-container {
         display: flex;
         flex-direction: column;
-        }
+        align-items: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      input {
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="form-container">
-        <h1>Update User</h1>
-        <form action="/users/<%= user.id %>?_method=PUT" class="form" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="<%= user.name %>" required>
+      <h1>Update User</h1>
+      <form
+        action="/users/<%= user.id %>?_method=PUT"
+        class="form"
+        method="post"
+      >
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="<%= user.name %>"
+          required
+        />
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" value="<%= user.age %>" required>
+        <label for="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          value="<%= user.age %>"
+          required
+        />
 
-            <label for="id">ID:</label>
-            <input type="number" id="id" name="id" value="<%= user.id %>" required readonly>
+        <label for="id">ID:</label>
+        <input
+          type="number"
+          id="id"
+          name="id"
+          value="<%= user.id %>"
+          required
+          readonly
+        />
 
-            <button type="submit">Update</button>
-        </form>
+        <button type="submit">Update</button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

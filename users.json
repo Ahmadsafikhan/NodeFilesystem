@@ -1,1 +1,17 @@
-[{"name":"sad","age":24,"id":1},{"name":"arsalan","age":25,"id":2},{"name":"akbar","age":51,"id":6},{"name":"chris","age":43,"id":12},{"name":"jordan","age":41,"id":88}]
+[
+  {
+    "name": "arsalan",
+    "age": 25,
+    "id": 2
+  },
+  {
+    "name": "chris",
+    "age": 43,
+    "id": 12
+  },
+  {
+    "name": "faris",
+    "age": 20,
+    "id": 9823
+  }
+]
