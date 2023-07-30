@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <ul>
+        <% users.forEach(user => { %>
+            <li><%= user.name %> - <%= user.age %> years old (ID: <%= user.id %>)</li>
+        <% }); %>
+    </ul>
+    <p><a href="/users/create">Create New User</a></p>
+</body>
+</html>
